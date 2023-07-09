@@ -10,17 +10,30 @@ const PersonListContainer = styled.div`
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
-justify-content: space-evenly;
+justify-content: space-around;
 align-items: center;
 min-height: 20em;
 width: 30em;
-margin: 1em;
+margin: 5em;
 font-size: 1em;
-padding: 2em;
-background-color: green;
+padding: 3em;
+background-color: #acc6aa;
 border-radius: 20%;
 
 `;
+
+const NavbarLink = styled(Link)`
+color: black;
+ font-size: large;
+ text-decoration: none;
+ margin: 10px;
+&:hover,
+&:focus{
+    color: papayawhip;
+}
+&:active{
+    color: red;
+}`;
 
 function PersonList(props) {
     const [persons, setPerson] = React.useState({ data: [] });
@@ -39,9 +52,9 @@ function PersonList(props) {
       <PersonListContainer>
         <h1>Click on a person to see its movieratings and genres:</h1>
         {persons.data.map(person => (
-            <Link to={`/person/${person.firstName}`} key={person.personId}>
+            <NavbarLink to={`/person/${person.firstName}`} key={person.personId}>
                 <Person firstName={person.firstName}/>
-            </Link>
+            </NavbarLink>
             ))}
         </PersonListContainer>
       </>

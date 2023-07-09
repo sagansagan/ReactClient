@@ -14,7 +14,7 @@ const MainContainer = styled.main`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: burlywood;
+  background: #eeeeee;
   min-height: 100vh;
 `;
 

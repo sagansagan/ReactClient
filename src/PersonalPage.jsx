@@ -16,7 +16,7 @@ function PersonalPage() {
     let match = useRouteMatch();
   
     return (
-      <>
+    <>
       <h1>Personal page</h1>
       <Switch>
         <Route path={`${match.path}/:firstName`}>
@@ -30,7 +30,7 @@ function PersonalPage() {
           <h3>Go back and click on a person.</h3>
         </Route>
       </Switch>
-      </>
+    </>
     );
   }
   

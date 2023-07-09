@@ -1,7 +1,26 @@
 import * as React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 import * as URL from './ApiCalls';
+
+const Button = styled.button`
+background: transparent;
+  border-radius: 3px;
+  border: 2px solid black;
+  color: #000000;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`;
+
+const Input = styled.input`
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+  background: #acc6aa;
+  border: none;
+  border-radius: 3px;
+  `;
 
 function AddRating(){
   const [movie, setMovie] = React.useState('');
@@ -72,9 +91,9 @@ function AddRating(){
     <form onSubmit={handleSubmit}>
         <h2>Add Rating</h2>
         <p>User:</p>
-        <input type="text" placeholder="user ID" onChange={handleUserChange}/>
-        <p>Movie</p>
-        <input type="text" placeholder='movie name' onChange={handleMovieChange} /><br />
+        <Input type="text" placeholder="user ID" onChange={handleUserChange}/>
+        <p>Movie:</p>
+        <Input type="text" placeholder='movie name' onChange={handleMovieChange} /><br />
         <select onChange={handleGenreChange}>
                     <option value=""> Select a genre </option>
                     {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
@@ -83,7 +102,7 @@ function AddRating(){
             <option>select rating</option>
                 {rate.map(r => (<option>{r}</option>))}
         </select>
-        <button type="submit">Add Rating</button>
+        <Button type="submit">Add Rating</Button>
     </form>
     </>
   );
